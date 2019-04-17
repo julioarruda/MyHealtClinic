@@ -35,7 +35,7 @@ steps:
     gulpFile: 'src/MyHealth.Web/gulpfile.js'
     targets: 
 
-- task: DotNetCoreCLI@2
+- task: DotNetCoreCLI@1
   inputs:
     command: 'build'
     projects: '**/*.csproj'
