@@ -7,7 +7,10 @@ trigger:
 - master
 
 pool:
-  vmImage: 'Ubuntu-16.04'
+  name: Hosted VS2017
+  demands:
+  - npm
+  - node.js
 
 steps:
 - task: DotNetCoreCLI@2
@@ -15,7 +18,7 @@ steps:
     command: 'restore'
     projects: '**/*.csproj'
     selectOrConfig: 'config'
-    nugetConfigPath: 'Nuget.config'
+    nugetConfigPath: '**/Nuget.config'
 
 - task: Npm@1
   inputs:
