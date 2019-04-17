@@ -18,7 +18,7 @@ steps:
     command: 'restore'
     projects: '**/*.csproj'
     selectOrConfig: 'config'
-    nugetConfigPath: '**/Nuget.config'
+    nugetConfigPath: Nuget.config
 
 - task: Npm@1
   inputs:
