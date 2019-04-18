@@ -21,7 +21,7 @@ pool:
   - node.js
 
 steps:
-- template: common.yml@BuildTemplates/azure-pipelines.yml
+- template: common.yml@BuildTemplates
 
 - task: PublishBuildArtifacts@1
   inputs:
