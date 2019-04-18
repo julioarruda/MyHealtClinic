@@ -24,9 +24,9 @@ pool:
 steps:
 - template: template.yml@templates
   parameters:
-    buildConfiguration: '${{ templates.BuildConfiguration }}'
-    date: ${{ templates.date }}
+    buildConfiguration: '${{ variables.BuildConfiguration }}'
+    date: ${{ variables.date }}
 
 - task: PublishBuildArtifacts@1
   inputs:
-    ArtifactName: '${{ templates.artifactName }}'
+    ArtifactName: '${{ variables.artifactName }}'
