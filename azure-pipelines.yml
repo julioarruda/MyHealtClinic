@@ -14,6 +14,7 @@ trigger: none
 variables: 
    BuildConfiguration: release 
    artifactName: teste
+   date: $[format('{0:yyyy}', pipeline.startTime)]
 
 pool:
   name: Hosted VS2017
