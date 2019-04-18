@@ -3,6 +3,11 @@
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
 
+resources:
+  repositories:
+    - repository: BuildTemplates
+      name: BuildTemplates
+
 trigger:
 - master
 
@@ -15,55 +20,7 @@ pool:
   - node.js
 
 steps:
-- task: DotNetCoreCLI@2
-  inputs:
-    command: 'restore'
-    projects: '**/*.csproj'
-    selectOrConfig: 'config'
-    nugetConfigPath: Nuget.config
-
-- task: Npm@1
-  inputs:
-    command: 'install'
-    workingDir: 'src/MyHealth.Web'
-
-- task: Bower@0
-  inputs:
-    command: 'install'
-    bowerjson: 'src/MyHealth.Web/bower.json'
-
-- task: Gulp@1
-  inputs:
-    gulpFile: 'src/MyHealth.Web/gulpfile.js'
-    targets: 
-
-- task: DotNetCoreCLI@2
-  inputs:
-    command: 'build'
-    projects: '**/*.csproj'
-    arguments: '--configuration $(BuildConfiguration)'
-
-- task: DotNetCoreCLI@2
-  inputs:
-    command: 'test'
-    projects: '**/*Tests/*.csproj'
-    arguments: '--logger:trx;logfilename=TEST.xml'
-
-- task: DotNetCoreCLI@2
-  inputs:
-    command: 'publish'
-    arguments: '--configuration $(BuildConfiguration) --output $(build.artifactstagingdirectory)'
-
-- task: PublishTestResults@2
-  inputs:
-    testResultsFiles: '**/TEST-*.xml'
-    testRunTitle: 'MyHealthClinic'
-
-- task: CopyFiles@2
-  inputs:
-    SourceFolder: '$(build.sourcesdirectory)'
-    Contents: '**/*.json'
-    TargetFolder: '$(build.artifactstagingdirectory)'
+- template: BuildTemplates@azure-pipelines.yml
 
 - task: PublishBuildArtifacts@1
   inputs:
