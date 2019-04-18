@@ -11,7 +11,9 @@ resources:
 
 trigger: none
 
-variables: { BuildConfiguration: release }
+variables: 
+   BuildConfiguration: release 
+   artifactName: teste
 
 pool:
   name: Hosted VS2017
@@ -26,4 +28,4 @@ steps:
 
 - task: PublishBuildArtifacts@1
   inputs:
-    ArtifactName: 'drop'
+    ArtifactName: '$(artifactName)'
