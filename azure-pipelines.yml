@@ -12,9 +12,7 @@ resources:
 trigger: none
 
 variables: 
-   BuildConfiguration: release 
-   artifactName: teste
-   date: $[format('{0:yyyy}', pipeline.startTime)]
+   template: variables.yml@templates
 
 pool:
   name: Hosted VS2017
