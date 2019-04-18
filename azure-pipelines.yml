@@ -3,12 +3,6 @@
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
 
-resources:
-  repositories:
-    - repository: BuildTemplates
-      type: git
-      name: DemoSerie
-
 trigger: none
 
 variables: { BuildConfiguration: release }
@@ -20,7 +14,7 @@ pool:
   - node.js
 
 steps:
-- template: azure-pipelines.yml@BuildTemplates
+- template: template.yml
 
 - task: PublishBuildArtifacts@1
   inputs:
