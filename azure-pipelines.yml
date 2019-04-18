@@ -25,7 +25,7 @@ steps:
 - template: template.yml@templates
   parameters:
     buildConfiguration: '${{ variables.BuildConfiguration }}'
-    date: ${{ variables.date }}
+    date: '${{ variables.date }}'
 
 - task: PublishBuildArtifacts@1
   inputs:
