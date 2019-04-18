@@ -5,9 +5,9 @@
 
 resources:
   repositories:
-    - repository: BuildTemplates
+    - repository: templates
       type: git
-      name: DemoSerie
+      name: DemoSerie/BuildTemplates
 
 trigger: none
 
@@ -20,7 +20,7 @@ pool:
   - node.js
 
 steps:
-- template: template.yml@BuildTemplates
+- template: template.yml@templates
 
 - task: PublishBuildArtifacts@1
   inputs:
