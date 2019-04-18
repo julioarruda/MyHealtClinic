@@ -6,7 +6,8 @@
 resources:
   repositories:
     - repository: BuildTemplates
-      name: BuildTemplates
+      type: git
+      name: demoserievideo2/DemoSerie
 
 trigger:
 - master
@@ -20,7 +21,7 @@ pool:
   - node.js
 
 steps:
-- template: common.yml@BuildTemplates
+- template: common.yml@BuildTemplates/azure-pipelines.yml
 
 - task: PublishBuildArtifacts@1
   inputs:
