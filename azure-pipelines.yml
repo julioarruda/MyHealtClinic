@@ -21,6 +21,8 @@ pool:
 
 steps:
 - template: template.yml@templates
+  parameters:
+  buildConfiguration: $(BuildConfiguration)
 
 - task: PublishBuildArtifacts@1
   inputs:
