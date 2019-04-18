@@ -7,7 +7,7 @@ resources:
   repositories:
     - repository: BuildTemplates
       type: git
-      name: demoserievideo2/DemoSerie
+      name: DemoSerie
 
 trigger:
 - master
