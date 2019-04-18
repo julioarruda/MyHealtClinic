@@ -9,8 +9,7 @@ resources:
       type: git
       name: DemoSerie
 
-trigger:
-- master
+trigger: none
 
 variables: { BuildConfiguration: release }
 
