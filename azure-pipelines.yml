@@ -13,6 +13,9 @@ trigger: none
 
 variables:
 - template: variables.yml@templates
+  
+
+parameters:
   date: $[format('{0:yyyy}', pipeline.startTime)] 
 
 pool:
@@ -25,7 +28,7 @@ steps:
 - template: template.yml@templates
   parameters:
     buildConfiguration: '${{ variables.BuildConfiguration }}'
-    date: '${{ variables.date }}'
+    date: '${{ parameters.date }}'
 
 - task: PublishBuildArtifacts@1
   inputs:
