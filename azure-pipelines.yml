@@ -14,6 +14,8 @@ trigger: none
 variables:
 - template: variables.yml@templates
 
+  teste: 'teste'
+
 
 pool:
   name: Hosted VS2017
