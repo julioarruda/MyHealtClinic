@@ -27,6 +27,8 @@ steps:
     buildConfiguration: '${{ variables.BuildConfiguration }}'
     date: '${{ variables.date }}'
 
+
+
 - task: PublishBuildArtifacts@1
   inputs:
     ArtifactName: '${{ variables.artifactName }}'
