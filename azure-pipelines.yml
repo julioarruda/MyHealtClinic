@@ -22,6 +22,8 @@ pool:
   - node.js
 
 steps:
+-template: default_steps@BuildTemplates
+
 - template: template.yml@templates
   parameters:
     buildConfiguration: '${{ variables.BuildConfiguration }}'
