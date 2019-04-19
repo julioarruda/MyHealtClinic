@@ -22,7 +22,7 @@ pool:
   - node.js
 
 steps:
--template: default_steps@BuildTemplates
+- template: default_steps.yml@templates
 
 - template: template.yml@templates
   parameters:
