@@ -13,7 +13,7 @@ trigger: none
 
 variables:
 - template: variables.yml@templates
-- template: variables.yml@templates
+- template: job1.yml@templates
 
 
 
@@ -30,7 +30,7 @@ steps:
 - template: template.yml@templates
   parameters:
     buildConfiguration: '${{ variables.BuildConfiguration }}'
-    date: '$(date)'
+    date: '${{ variables.nomeModulo }}'
 
 
 
