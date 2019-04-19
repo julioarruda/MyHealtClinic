@@ -13,8 +13,9 @@ trigger: none
 
 variables:
 - template: variables.yml@templates
+- template: variables.yml@templates
 
-  teste: 'teste'
+
 
 
 pool:
