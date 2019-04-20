@@ -31,7 +31,7 @@ steps:
 - template: template.yml@templates
   parameters:
     buildConfiguration: '${{ variables.BuildConfiguration }}'
-    date: '$(capina)'
+    date: '${{ variables.date1}}'
 
 
 
