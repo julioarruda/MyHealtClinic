@@ -15,9 +15,8 @@ variables:
 - template: variables.yml@templates
 - template: job1.yml@templates
 #- group: Teste
-- name: date1
-  value: $[format('{0:yyyy}', pipeline.startTime)]
-  
+
+
 pool:
   name: Hosted VS2017
   demands:
@@ -30,7 +29,7 @@ steps:
 - template: template.yml@templates
   parameters:
     buildConfiguration: '${{ variables.BuildConfiguration }}'
-    date: '${{ variables.date1}}'
+    date: $[format('{0:yyyy}', pipeline.startTime)]
 
 
 
