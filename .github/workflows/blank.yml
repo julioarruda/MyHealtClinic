@@ -13,4 +13,6 @@ jobs:
       uses: actions/setup-dotnet@v1
     - run: dotnet restore src\MyHealth.API\MyHealth.API.csproj
     - run: npm install src/MyHealth.Web
+    - run: bower install src/MyHealth.Web/bower.json
+    
     
