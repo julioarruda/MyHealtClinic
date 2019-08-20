@@ -5,14 +5,13 @@ on: [push]
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: windowes-latest
 
     steps:
     - uses: actions/checkout@v1
     - name: Setup dotnet
       uses: actions/setup-dotnet@v1
     - run: dotnet restore src\MyHealth.API\MyHealth.API.csproj
-    - uses: actions/npm@master
     - run: npm install src/MyHealth.Web
     - run: bower install src/MyHealth.Web/bower.json
     
